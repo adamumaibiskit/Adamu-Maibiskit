@@ -1,0 +1,454 @@
+/* GENERAL RESET & SCROLL BEHAVIOR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+/* TOP STICKY NAVIGATION SYSTEM */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    z-index: 1000;
+    padding: 12px 20px;
+}
+
+.user-meta {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto 12px auto;
+    font-size: 0.85rem;
+    color: #666666;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 6px;
+}
+
+/* FIX: Clear padding and margin setups to allow scrollbar clearance without blocking button clicks */
+.top-nav {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 8px;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto;
+    padding: 8px 20px 14px 20px; /* Added extra bottom padding to separate scrollbar from clickable button zone */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Cleaner Scrollbar track so it stays out of the button space */
+.top-nav::-webkit-scrollbar {
+    height: 5px;
+}
+.top-nav::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 4px;
+}
+
+@media (min-width: 1100px) {
+    .top-nav {
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.nav-btn {
+    background: none;
+    border: 1px solid #cccccc;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #444444;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1010; /* Forces buttons above container overflow layers */
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: #0266cc;
+    color: #ffffff;
+    border-color: #0266cc;
+}
+
+/* MAIN BODY CONTAINER WITH INTEGRATED FIXED-HEADER CLEARANCE */
+.document-body {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 180px 20px 60px 20px; 
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* PAGE VIEWS: Targets snapping without hiding elements under nav bar */
+.page-view {
+    display: block; 
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    padding: 40px;
+    min-height: 520px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    scroll-margin-top: 155px; /* Clean spacing break when jumping to tabs */
+}
+
+.cover-page {
+    scroll-margin-top: 180px;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    color: #0266cc;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 10px;
+}
+
+/* COVER DESIGN ELEMENTS */
+.cover-layout {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.dept-tag {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666666;
+}
+
+.cover-layout h1 {
+    font-size: 2.2rem;
+    margin: 25px 0;
+    color: #111111;
+    letter-spacing: 0.5px;
+}
+
+.accent-bar {
+    width: 80px;
+    height: 4px;
+    background-color: #0266cc;
+    margin: 0 auto 25px auto;
+    border-radius: 2px;
+}
+
+.cover-layout h2 {
+    font-size: 1.6rem;
+    color: #333333;
+}
+
+.reg-number {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #555555;
+}
+
+/* PROFILE ALIGNMENT - UPDATED FOR LARGER PHOTO */
+.profile-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+@media (max-width: 600px) {
+    .profile-layout { 
+        flex-direction: column; 
+        align-items: center; 
+    }
+}
+
+.profile-pic-container {
+    width: 240px;        /* Increased from 180px */
+    height: 320px;       /* Increased from 240px to maintain standard 3:4 aspect ratio */
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px dashed #cccccc;
+    padding: 10px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    max-height: 270px;   /* Increased to scale beautifully inside the larger box */
+    object-fit: cover;   /* Prevents the image from stretching out of proportion */
+    border-radius: 4px;
+}
+
+.img-tip {
+    font-size: 0.8rem;
+    color: #777777;
+    margin-top: auto;
+    padding-top: 8px;
+}
+@media (max-width: 600px) {
+    .profile-layout { flex-direction: column; align-items: center; }
+}
+
+.profile-pic-container {
+    width: 180px;
+    height: 240px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px dashed #cccccc;
+    padding: 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    max-height: 190px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.img-tip {
+    font-size: 0.75rem;
+    color: #777777;
+    margin-top: auto;
+    padding-top: 5px;
+}
+
+/* CARDS AND OBJECT MODULES */
+.info-card, .project-card {
+    background-color: #fafbfc;
+    border-left: 4px solid #0266cc;
+    padding: 22px;
+    margin-bottom: 20px;
+    border-top: 1px solid #e1e4e8;
+    border-right: 1px solid #e1e4e8;
+    border-bottom: 1px solid #e1e4e8;
+    border-radius: 0 4px 4px 0;
+}
+
+.institution {
+    font-weight: bold;
+    color: #555555;
+    margin-top: 4px;
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: #888888;
+}
+
+.sub-heading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.custom-list {
+    padding-left: 20px;
+}
+
+.custom-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.text-block p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* CERTIFICATE STYLING */
+.certificate-section {
+    margin-top: 35px;
+}
+
+.cert-title {
+    font-size: 1.25rem;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.cert-card {
+    display: flex;
+    gap: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    padding: 20px;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .cert-card { flex-direction: column; }
+}
+
+.cert-info {
+    flex-grow: 1;
+}
+
+.cert-info h4 {
+    color: #111111;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.issuer {
+    font-size: 0.9rem;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+.cert-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.verify-link {
+    display: inline-block;
+    color: #0266cc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.verify-link:hover {
+    text-decoration: underline;
+}
+
+.cert-img-container {
+    width: 170px;
+    height: 110px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px dashed #cccccc;
+    padding: 4px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cert-thumb {
+    width: 100%;
+    height: auto;
+    max-height: 80px;
+    object-fit: cover;
+}
+
+/* SKILLS LAYOUT */
+.skills-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 500px) {
+    .skills-layout { grid-template-columns: 1fr; }
+}
+
+.skill-group {
+    background-color: #fafbfc;
+    border: 1px solid #e1e4e8;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.skill-group h3 {
+    margin-bottom: 12px;
+    color: #444444;
+}
+
+.skill-group ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.skill-group li {
+    margin-bottom: 8px;
+}
+
+.tech-used {
+    font-size: 0.9rem;
+    color: #666666;
+    margin: 5px 0 12px 0;
+    font-style: italic;
+}
+
+.description {
+    line-height: 1.5;
+}
+
+/* EVALUATION & QUOTE WRAPPERS */
+.quote-box {
+    background-color: #f7f9fa;
+    padding: 25px;
+    border-radius: 4px;
+    margin-top: 20px;
+    border-left: 3px solid #0266cc;
+}
+
+.quote-text {
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #444444;
+}
+
+.quote-author {
+    text-align: right;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #0266cc;
+}
+
+.contact-card {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.prompt-text {
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.contact-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 520px;
+}
+
+.contact-table td {
+    padding: 14px;
+    border-bottom: 1px solid #eeeeee;
+    text-align: left;
+}

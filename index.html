@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio - Adamu Tujjani Maibiskit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="user-meta">
+            <span class="student-name">Adamu T. Maibiskit</span>
+            <span class="student-id">ID: UG24 SEN1040</span>
+        </div>
+        <nav class="top-nav" id="navigation-bar">
+            <button class="nav-btn active" data-target="doc-page-1" onclick="scrollToPage('doc-page-1')">1. Title</button>
+            <button class="nav-btn" data-target="doc-page-2" onclick="scrollToPage('doc-page-2')">2. Profile</button>
+            <button class="nav-btn" data-target="doc-page-3" onclick="scrollToPage('doc-page-3')">3. Studies & Certs</button>
+            <button class="nav-btn" data-target="doc-page-4" onclick="scrollToPage('doc-page-4')">4. Skills</button>
+            <button class="nav-btn" data-target="doc-page-5" onclick="scrollToPage('doc-page-5')">5. Lab Work I</button>
+            <button class="nav-btn" data-target="doc-page-6" onclick="scrollToPage('doc-page-6')">6. Lab Work II</button>
+            <button class="nav-btn" data-target="doc-page-7" onclick="scrollToPage('doc-page-7')">7. Academic Engagements</button>
+            <button class="nav-btn" data-target="doc-page-8" onclick="scrollToPage('doc-page-8')">8. Objectives</button>
+            <button class="nav-btn" data-target="doc-page-9" onclick="scrollToPage('doc-page-9')">9. Faculty Evaluation</button>
+            <button class="nav-btn" data-target="doc-page-10" onclick="scrollToPage('doc-page-10')">10. Contact</button>
+        </nav>
+    </header>
+
+    <main class="document-body">
+
+        <section id="doc-page-1" class="page-view cover-page" data-title="Cover Page">
+            <div class="cover-layout">
+                <p class="dept-tag">Department of Software Engineering</p>
+                <h1>STUDENT ACADEMIC PORTFOLIO</h1>
+                <div class="accent-bar"></div>
+                <h2>Adamu Tujjani Maibiskit</h2>
+                <p class="reg-number">Registration No: UG24 SEN1040</p>
+            </div>
+        </section>
+
+        <section id="doc-page-2" class="page-view" data-title="Personal Profile">
+            <h2 class="section-title">Personal Profile</h2>
+            <div class="profile-layout">
+                <div class="profile-pic-container">
+                    <img src="images/Prifile Picture.jpeg" alt="Adamu Tujjani Maibiskit" class="profile-img" onerror="this.style.display='none';">
+                </div>
+                <div class="text-block">
+                    <p>I am an undergraduate student specializing in Software Engineering. My academic focus centers on analyzing complex software problems and translating them into efficient, functional code solutions.</p>
+                    <p>Throughout my studies, I have committed myself to mastering foundational computer science theories, expanding my practical programming capabilities, and learning how to collaborate effectively within technical development teams.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="doc-page-3" class="page-view" data-title="Academic Background">
+            <h2 class="section-title">Academic Background & Credentials</h2>
+            <div class="info-card">
+                <h3>B.Sc Software Engineering(B.Sc)</h3>
+                <p class="institution">Northwest University Kano.</p>
+                <p class="duration">Current Enrollment</p>
+                
+                <h4 class="sub-heading">Key Coursework Completed:</h4>
+                <ul class="custom-list">
+                    <li>Introduction to Software Engineering</li>
+                    <li>Structured & Object-Oriented Programming</li>
+                    <li>Logic Design & System Architecture</li>
+                    <li>Mathematical Foundations for Computing</li>
+                </ul>
+            </div>
+
+            <div class="certificate-section">
+                <h3 class="cert-title">Professional Certifications</h3>
+                <div class="cert-card">
+                    <div class="cert-info">
+                        <h4>Responsive Web Design / JavaScript Algorithms</h4>
+                        <p class="issuer">Issued by: <strong>freeCodeCamp</strong></p>
+                        <p class="cert-desc">Demonstrated proficiency in core web structures, semantic HTML layout elements, responsive UI designs, CSS flexbox/grid layouts, and program logic optimization structures.</p>
+                        <a href="https://www.freecodecamp.org/certification/adamumaibiskit/responsive-web-design" target="_blank" rel="noopener noreferrer" class="verify-link">
+                            🔗 Verify Certificate Authenticity
+                        </a>
+                    </div>
+                    <div class="cert-img-container">
+                        <img src="images/maibiskitcertificate.png" alt="freeCodeCamp Certificate Image" class="cert-thumb" onerror="this.style.display='none';">
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="doc-page-4" class="page-view" data-title="Technical Skills">
+            <h2 class="section-title">Technical Skills & Tools</h2>
+            <div class="skills-layout">
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Python (Scripting & Automation)</li>
+                        <li>C++ (Object-Oriented Concepts)</li>
+                        <li>HTML5 / CSS3 / JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Environments & Tools</h3>
+                    <ul>
+                        <li>Git Version Control System</li>
+                        <li>VS Code Integrated Environment</li>
+                        <li>SQL Database Management Basics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="doc-page-5" class="page-view" data-title="Laboratory Analysis I">
+            <h2 class="section-title">Laboratory Practical Work I</h2>
+            <div class="project-card">
+                <h3>Assignment Focus: Algorithmic Problem Solving & Data Handling</h3>
+                <p class="tech-used">Course Association: Object-Oriented Programming (Python)</p>
+                <p class="description">Successfully completed departmental laboratory modules centered on foundational data structures. Designed and compiled clean execution scripts handling logical data validation arrays, iterative conditional structures, and system exception controls tailored to strict curriculum assignment specs.</p>
+            </div>
+        </section>
+
+        <section id="doc-page-6" class="page-view" data-title="Laboratory Analysis II">
+            <h2 class="section-title">Laboratory Practical Work II</h2>
+            <div class="project-card">
+                <h3>Assignment Focus: Structured Systems Programming</h3>
+                <p class="tech-used">Course Association: Structured C++ Foundations</p>
+                <p class="description">Executed comprehensive practical exercises focused on local computer memory tracking, storage reading streams, and array transformations. Built modular source codes ensuring high processing compliance and exact adherence to system input engineering principles.</p>
+            </div>
+        </section>
+
+        <section id="doc-page-7" class="page-view" data-title="Academic Engagements">
+            <h2 class="section-title">Academic Engagements & Dedication</h2>
+            <div class="info-card">
+                <h3>Departmental & Co-Curricular Focus</h3>
+                <ul class="custom-list">
+                    <li><strong>Academic Peer Study Circles:</strong> Actively participates in technical review sessions to break down complex core computing problems and review object-oriented code architectures.</li>
+                    <li><strong>Technical Workshop Attendance:</strong> Consistently attends faculty-led engineering forums and code testing reviews to stay aligned with industrial software engineering practices.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="doc-page-8" class="page-view" data-title="Career Objectives">
+            <h2 class="section-title">Career Objectives</h2>
+            <div class="text-block">
+                <p>My near-term objective is to deepen my knowledge of full-stack engineering and cloud deployment lifecycles. I look forward to working within dynamic development teams where I can help create secure, maintainable software frameworks that solve critical daily problems.</p>
+            </div>
+        </section>
+
+        <section id="doc-page-9" class="page-view" data-title="Performance Evaluation">
+            <h2 class="section-title">Faculty & Peer Assessment</h2>
+            <div class="quote-box">
+                <p class="quote-text">"Adamu approaches software design with commendable academic discipline. He exhibits deep concentration during algorithmic troubleshooting and remains committed to delivering structurally organized code logic during practical team exercises."</p>
+                <p class="quote-author">— Academic Assessment Review</p>
+            </div>
+        </section>
+
+        <section id="doc-page-10" class="page-view" data-title="Contact & Communication">
+            <h2 class="section-title">Contact & Communication</h2>
+            <div class="contact-card">
+                <p class="prompt-text">Please feel free to connect for project collaborations or technical discussions.</p>
+                <table class="contact-table">
+                    <tbody>
+                        <tr>
+                            <td><strong>Email Address:</strong></td>
+                            <td>Adayomaibiskit@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile Phone:</strong></td>
+                            <td>07025245054</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Department:</strong></td>
+                            <td>Faculty of Computing, Software Eng.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
