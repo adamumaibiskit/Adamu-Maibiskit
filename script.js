@@ -1,11 +1,9 @@
-// Global toggle flag to prevent scrollspy and manual button clicks from fighting each other
 let isProgrammaticScrolling = false;
 
 function scrollToPage(elementId) {
     isProgrammaticScrolling = true;
     
-    // De-activate all elements immediately on click to prioritize action responsiveness
-    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
     const clickedButton = document.querySelector(`[data-target="${elementId}"]`);
     if (clickedButton) clickedButton.classList.add('active');
 
@@ -18,16 +16,16 @@ function scrollToPage(elementId) {
     const targetElement = document.getElementById(elementId);
     if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
-        // Allow time for smooth scroll animation to finish before turning scrollspy back on
+     
         setTimeout(() => { isProgrammaticScrolling = false; }, 800);
     } else {
         isProgrammaticScrolling = false;
     }
 }
 
-// Scroll Spy Mechanism
+
 window.addEventListener('scroll', () => {
-    // If a tab button was explicitly clicked, ignore scroll tracking calculations temporarily
+   
     if (isProgrammaticScrolling) return;
 
     const sections = document.querySelectorAll('.page-view');
@@ -51,7 +49,7 @@ window.addEventListener('scroll', () => {
         if (button.getAttribute('data-target') === currentActiveSectionId) {
             button.classList.add('active');
             
-            // Auto-centers navigation links inside sliding bars smoothly as you scroll down
+            
             if (navBar) {
                 const buttonLeft = button.offsetLeft;
                 const buttonWidth = button.offsetWidth;
